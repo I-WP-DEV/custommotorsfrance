@@ -1,0 +1,330 @@
+/* BRINY Addons styles
+----------------------------------------------------------------- */
+
+@import "../../css/_mixins.scss";
+@import "../../css/_theme-vars.scss";
+
+/* Boats */
+.boats_page_featured{
+	position: relative;
+	.boats_page_title_price{
+		position: absolute;
+		bottom:0;
+		left:0;
+		right:0;
+		top:auto;
+		padding:21px 25px;
+		.boats_price{
+			.boats_price_data, .boats_price_label{
+				@include font(14px,16px,800);
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+.boats_page_gallery{
+	.boats_page_gallery_item{
+		box-shadow: none;
+		border:none;
+		@include transition-all(.2s);
+		top:0;
+		&:hover{
+			top: -4px;
+		}
+		&.boats_page_gallery_item_active{
+			top: -4px;
+		}
+	}
+}
+.boats_page_featured + .boats_page_title_wrap, .boats_page_gallery + .boats_page_title_wrap {
+	margin-top: 1.6em;
+}
+.boats_page_title_wrap{
+  display: flex;
+  justify-content: space-between;
+}
+.boats_page_section.boats_page_content{
+	margin-top: 1.5em;
+}
+.boats_page_section + .boats_page_section {
+	 margin-top: 2em;
+ }
+.boats_page_title {
+	margin: 0;
+	padding-right: 0;
+	@include font(24px,26px,800);
+}
+.boats_page_title_address {
+	@include font(18px);
+	.boats_address{
+		padding-left:10px;
+	}
+}
+.boats_page_meta_wrap{
+	margin-top:15px;
+	.boats_page_section_item{
+		width:auto;
+		padding-right:42px;
+		.boats_page_label{
+			&+.boats_page_data{
+				margin-left:6px;
+			}
+			&.icon-ruler{
+				@include font(1.7em);
+			}
+			&.icon-bed, &.icon-speed{
+				@include font(1.2em);
+			}
+		}
+		.boats_page_data{
+			@include font(1rem,'', 300);
+		}
+	}
+}
+.boats_page_details{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	.boats_page_details_wrapper{
+		width:calc(50% - 15px);
+		table{
+			width: 100%;
+			tbody{
+				tr td{
+					width:50%;
+					padding:26px  5px 26px 30px;
+					.boats_page_data{
+						font-weight: 300;
+					}
+				}
+			}
+		}
+	}
+}
+.boats_page_agent, 
+.boats_page_attachments,
+.boats_page_book {
+	padding-top: 110px;
+	margin-top:110px;
+	border-top:1px solid red;
+	.boats_page_section_title {
+		border:none;
+		padding-bottom:0;
+		margin-bottom: 0.7em;
+		margin-top:0;
+	}
+}
+.single.single-cpt_agents{
+	.boats_page_agent{
+		padding:0;
+		margin:0;
+		border:none;
+		.boats_page_agent_wrap{
+			padding:0;
+		}
+	}
+}
+.boat_specification{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 110px;
+	margin-top:110px;
+	border-top:1px solid red;
+	.boat_specification_wrapper{
+		width:calc(50% - 15px);
+		h4{
+			margin-top:0;
+		}
+		.boat_amenities_list, .boat_specification_list{
+			display: flex;
+			flex-direction: column;
+			a{
+				@include font(14px,26px, 800);
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				align-self: flex-start;
+				&:before{
+					content: '';
+					width:6px;
+					height:6px;
+					@include border-round();
+					margin-right: 10px;
+					display: inline-block;
+					background: red;
+					position: relative;
+					top: -2px;
+				}
+			}
+		}
+	}
+}
+
+.boats_search_form .boats_search_advanced .sc_form_field{
+	width:33.3%;
+	&.sc_form_field_boats_length, &.sc_form_field_boats_price{
+		width:50%;
+		padding:15px 10px 13px;
+	}
+}
+.boats_search_advanced{
+	.sc_form_field{
+		.select_container{
+			select{
+				padding: 1.322em 1.8em;
+			}
+		}
+	}
+}
+.trx_addons_range_slider_label_max, .trx_addons_range_slider_label_min{
+	display: none;
+}
+
+.boats_search_vertical .boats_search_form .boats_search_advanced .sc_form_field{
+	margin-bottom:10px;
+	width:100%;
+}
+.boats_search_horizontal{
+	.boats_specification_search, .boats_amenities_search{
+		width:49%;
+		display: inline-block;
+		vertical-align: top;
+		.sc_form_field{
+			width:100%;
+		}
+	}
+	.sc_form_field_boats_length, .sc_form_field_boats_price{
+		margin-top:29px;
+	}
+	.boats_search_form .boats_search_basic .boats_search_button, .boats_search_form .boats_search_basic .boats_search_show_advanced{
+		width: 45px;
+	}
+	.boats_search_form .boats_search_basic .boats_search_show_advanced{
+		right:45px;
+	}
+}
+.boat_hide_title{
+	.sc_blogger_item_content, .boats_page_title_address, .boats_page_meta_wrap{
+		display: none;
+	}
+	.sc_blogger_item_default_classic_2.cpt_boats.sc_blogger_item.cpt_boats{
+		padding-bottom:10px;
+	}
+}
+.boats_search_horizontal .sc_form_field_boats_length, .boats_search_horizontal .sc_form_field_boats_price {
+	margin-top: 0!important;
+}
+.trx_addons_range_slider{
+	margin-bottom:5px;
+}
+
+span.sc_form_field_title{
+	@include font(14px ,20px, 300);
+	margin-bottom:1.7em;
+	margin-left:-5px;
+}
+.boats_search_vertical .sc_form_field_boats_length{
+	margin-top:29px;
+}
+div.ui-slider-horizontal{
+	height:4px;
+}
+div.ui-slider .ui-slider-handle{
+	width:8px;
+	height:10px;
+}
+div.ui-slider-horizontal .ui-slider-handle{
+	top: -3px;
+	margin-left: -0.3em;
+}
+.boats_search_vertical .offset-top{
+	margin-top:49px;
+}
+.search_title_section{
+	margin-top:17px;
+	@include font(14px,28px,800);
+	letter-spacing: 1px;
+	.boats_search_horizontal &{
+		margin-top:0;
+		padding-left: 5px;
+	}
+}
+.sc_form_field_checkbox.optional{
+	margin-bottom:0!important;
+	display: block;
+	line-height: 1.45em;
+	.sc_form_field_wrap{
+		label{
+			@include font(14px,21px,300);
+			letter-spacing: 1px;
+			padding-left: 1.7em;
+			&:before{
+				width:0.7em;
+				height:0.7em;
+			}
+		}
+	}
+}
+.sc_boats_item .sc_boats_item_thumb[class*="hover_"] {
+	display: inline-block;
+}
+.boats_page_agent_wrap{
+	padding: 36px;
+	display: flex;
+	align-items: center;
+	.boats_page_agent_info_phones{
+		margin-top:8px;
+		a:before{
+		margin-right:6px;
+		}
+	}
+}
+.boats_page_agent_info_name{
+	@include font(18px,28px);
+}
+.boats_page_agent_info_profiles.socials_wrap .social_item .social_icon{
+	width: 45px;
+	height:45px;
+	@include border-round();
+	line-height: 45px;
+	font-size: 20px;
+}
+
+.sc_boats_item_options .sc_boats_item_row_address .sc_boats_item_option_label{
+	display: inline-block;
+}
+.trx_addons_range_slider_label_cur + .trx_addons_range_slider_label_cur{
+	transform: translateX(-85%);
+}
+
+/*Booked plugins on the boat single page*/
+.single-cpt_boats table.booked-calendar th .monthName{
+	font-size: 24px;
+	height: auto;
+}
+.single-cpt_boats table.booked-calendar th .page-left, 
+.single-cpt_boats table.booked-calendar th .page-right{
+  @include square(3em);
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.single-cpt_boats table.booked-calendar th .page-left{
+	left: 10px !important;
+}
+.single-cpt_boats table.booked-calendar th .page-right{
+	right: 10px !important;
+}
+.single-cpt_boats table.booked-calendar th .monthName:after{
+	content: '';
+	position: absolute;
+}
+.single-cpt_boats table.booked-calendar tr.days th{
+  padding: 0.7rem !important;
+}
+.single-cpt_boats table.booked-calendar thead tr:first-child th{
+	padding: 10px !important;
+}
+
+

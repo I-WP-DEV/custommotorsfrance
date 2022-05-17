@@ -1,0 +1,15 @@
+/*----- RTL -----*/
+
+#customize-header-actions .customize-action-reset {
+    float: left;
+    margin: 0 6px 0 0;
+    max-width: 50px;
+}
+#customize-header-actions .customize-action-refresh {
+    left: auto;
+    right: 60px;
+}
+.customize-control-info > div {
+    border-right: 4px solid #1e8cbe;
+    border-left: 0px solid #1e8cbe;
+}

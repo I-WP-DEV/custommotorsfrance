@@ -1,0 +1,117 @@
+/* Blog layout: Excerpt 
+------------------------- */
+
+@import "../../css/_mixins.scss";
+@import "../../css/_theme-vars.scss";
+
+.post_layout_excerpt {
+	position:relative;
+	margin-bottom:0;
+}
+.post_layout_excerpt + .post_layout_excerpt {
+	margin-top: 30px;
+}
+.post_layout_excerpt:not(.sticky) + .post_layout_excerpt:not(.sticky) {
+	margin-top: 30px;
+	padding-top:0;
+}
+.post_layout_excerpt.sticky {
+	padding: 0;
+}
+.post_layout_excerpt .post_featured {
+	display: inline-block;
+}
+
+.post_layout_excerpt.post_format_audio .post_featured.without_thumb,
+.post_layout_excerpt.post_format_gallery .post_featured.without_thumb {
+	display:block;
+}
+.post_layout_excerpt .post_header {
+	margin: 0;
+	position:relative;
+}
+.post_layout_excerpt .post_header .post_price {
+	width: auto;
+	@include abs-rt;
+	@include font(2.5em, 1.5em);
+}
+.post_layout_excerpt .post_title {
+	margin: 0;
+	@include font(24px,28px,800);
+	margin-top: 9px;
+}
+.post_layout_excerpt .post_meta {
+	margin-top: 0;
+}
+.post_layout_excerpt .post_header + .post_content {
+	margin-top:1.3rem;
+}
+
+// First post large in the Classic and Masonry
+body[class*="blog_style_classic"] .post_layout_excerpt,
+body[class*="blog_style_masonry"] .post_layout_excerpt {
+	margin-bottom: 3em;
+}
+
+.post_content_excerpt{
+	padding: 50px;
+	width:100%;
+	box-sizing: border-box;
+	align-self: center;
+	.has-post-thumbnail &{
+		padding: 15px 50px;
+	}
+
+	.sc_blogger_excerpt &{
+		padding: 50px 50px 60px;
+	}
+	.post_format_quote &{
+		padding:0;
+		blockquote{
+			margin-bottom: 0;
+		}
+		.post_header{
+			padding:50px;
+		}
+		.post_content{
+			margin-top:0;
+		}
+	}
+}
+.post_layout_excerpt.post_format_image .post_content_excerpt{
+	padding: 15px 50px;
+}
+
+.post_format_audio.has-post-thumbnail .post_content_excerpt, .post_format_video.has-post-thumbnail .post_content_excerpt{
+	padding: 50px;
+}
+.post_layout_excerpt.post_format_audio .post_featured.without_thumb .mejs-container{
+	margin-top:0;
+}
+
+.post_meta .post_date{
+	font-weight: 300;
+}
+.post_item.post_layout_excerpt:not(.post_format_gallery):not(.post_format_audio){
+	display: flex;
+	.post_featured.with_thumb{
+		flex: 1 1 270px;
+		min-width: 270px;
+		margin-bottom:0;
+		align-self: flex-start;
+	}
+}
+.sc_blogger_excerpt  .post_item.post_layout_excerpt:not(.post_format_gallery):not(.post_format_audio){
+	img{
+		height:100%;
+		width:100%;
+	}
+}
+
+
+.post_meta_item.post_categories{
+	text-transform: uppercase;
+}
+.post_layout_excerpt.post_format_gallery .post_featured.without_thumb{
+	margin-bottom:0;
+}
